@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @charge.product_id %>
+</p>
+
+<p>
+  <strong>Original amount:</strong>
+  <%= @charge.original_amount %>
+</p>
+
+<p>
+  <strong>Amount charged:</strong>
+  <%= @charge.amount_charged %>
+</p>
+
+<p>
+  <strong>Stripe charge:</strong>
+  <%= @charge.stripe_charge_id %>
+</p>
+
+<p>
+  <strong>Charge refunded?:</strong>
+  <%= @charge.refunded%>
+</p>
+
+<%= link_to 'Back', charges_path %>

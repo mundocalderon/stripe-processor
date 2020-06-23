@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Original amount</th>
+      <th>Amount charged</th>
+      <th>Stripe charge</th>
+      <th>Refunded?</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.each do |charge| %>
+      <tr>
+        <td><%= charge.product_id %></td>
+        <td><%= charge.original_amount %></td>
+        <td><%= charge.amount_charged %></td>
+        <td><%= charge.stripe_charge_id %></td>
+        <td><%= charge.refunded %></td>
+        <td><%= link_to 'Show', charge %></td>
+        <td><%= link_to 'Refund', refund_charge_path(charge) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
